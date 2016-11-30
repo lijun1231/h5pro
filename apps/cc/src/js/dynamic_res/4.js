@@ -1,0 +1,40 @@
+/**
+ * Created by Administrator on 2016/8/3.
+ */
+var Man = Backbone.Model.extend({
+    initialize: function(){
+        alert('Hey, you create me!');
+        //初始化时绑定监听, change事件会先于validate发生
+        this.bind("change:name",function(){
+            var name = this.get("name");
+            alert("你改变了name属性为：" + name);
+        });
+        this.bind("invalid",function(model,error){
+            alert(error);
+        });
+    },
+    defaults: {
+        name:'张三',
+        age: '38'
+    },
+    validate:function(attributes){
+        if(attributes.name == '') {
+            return "name不能为空！";
+        }
+    },
+    aboutMe: function(){
+        return '我叫' + this.get('name') + ',今年' + this.get('age') + '岁';
+    }
+});
+var man = new Man;
+// 这种方式添加错误处理也行
+// man.on('invalid', function(model, error){
+//         alert(error);
+// });
+
+//默认set时不进行验证
+man.set({name:''});
+//手动触发验证, set时会触发
+//man.set({name:''}, {'validate':true});
+//save时触发验证。根据验证规则，弹出错误提示。
+man.save();

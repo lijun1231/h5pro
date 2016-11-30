@@ -1,0 +1,29 @@
+{
+  "name": "第一个Chrome插件",
+  "manifest_version": 2,
+  "version": "1.0",
+  "description": "我的第一个Chrome插件，还不错吧",
+  "browser_action": {
+    "default_icon": "images/logo.png",
+    "default_title":"hello title"
+  },
+  "background": {
+    "scripts":["js/jquery.js","js/background.js"],
+    "persistent": false
+  },
+  "permissions":[
+    "https://*/",
+    "http://*/",
+    "notifications",
+    "tabs",
+    "activeTab",
+    "storage",
+    "cookies"
+  ],
+  "update_url":"http://192.168.101.7/h5pro/apps/chrome_plugins/demo",
+  "content_scripts": [{
+    "matches": ["http://*/*","https://*/*"],
+    "css": ["css/1.css"],
+    "js": ["js/jquery.js","js/1.js"]
+  }]
+}

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<title>鹰眼视频网</title>
+	<link rel="stylesheet" href="src/css/style.css"/>
+	<script src="src/js/jquery.js"></script>
+	<script src="src/js/lib.js"></script>
+</head>
+<body>
+
+	<div style="width: 100%;box-sizing:border-box; padding: 0px; border:0 solid #f90;" id="video-box">
+	</div>
+	<script>
+		responsiveScaling();
+		var videoRes={};
+		var baseVideo="http://tyjm.oss-cn-shanghai.aliyuncs.com/";
+		$.ajax({
+			url:"http://test.weixinlukuang.com/wechat_web/index.php?d=account&c=video&m=getVideoDetail",
+			type:"post",
+			data:{
+				secret:"5b5912180a48d6f50bd0ba620e04cd61458ad1cee22c799758f079659372b1053c517eda1fbf8d2efdba6ac3e2131b044dfc5a5e676d1b8e150c7b101f966a8d",
+				video_id:getUrlval("video_id")
+			},
+			success:function(data){
+				var data=JSON.parse(data).data;
+				videoRes.poster=baseVideo+data.video_cover;
+				videoRes.url=baseVideo+data.video_url;
+				//videoRes.url=baseVideo+"upload/20160806/v/wY-0Dgr7g4CzQrrglvQKiNsmr1mptZnDFSdTeUWZ7dJXwlJ5gV_zNVPO-UbR-xRD.mp4";
+				console.log(videoRes);
+				$("#video-box").html("<script src='sewise-player/sewise-player/player/sewise.player.min.js?server=vod&type=mp4&videourl="+videoRes.url+"&media_id=AR25sJ0Z2qjD7sTNkISV0klbGFSqBJqNZT7B14DeeQdc_rw2WidHpVUyUNDEhzn0&sourceid=&autostart=false&starttime=0&lang=en_US&title=VodVideo&buffer=5&claritybutton=disable&skin=vodFlowPlayer&fallbackurls=%7B%0A%09%22ogg%22%3A%20%22http%3A%2F%2Fjackzhang1204.github.io%2Fmaterials%2Fmov_bbb.ogg%22%2C%0A%09%22webm%22%3A%20%22http%3A%2F%2Fjackzhang1204.github.io%2Fmaterials%2Fmov_bbb.webm%22%0A%7D&topbardisplay=disable&poster="+videoRes.poster+"'><\/script>");
+			}
+		});
+	</script>
+	<div style="padding:1rem">
+		<div class="itm">
+			<em class="fb">标题</em> : glory and dream
+		</div>
+		<div class="itm">
+			<em class="fb">介绍</em> : we are excellent programmer
+		</div>
+		<div class="itm">
+			<em class="fb">作者</em> : 三环一少 <em class="cl-grey">&nbsp;&nbsp;&nbsp;2016年08月07日</em>
+		</div>
+		<div class="itm">
+			<em class="fb cl-green">阅读 369 </em> | <em class="fb cl-green">点赞 25</em> | <em class="fb cl-green">分享 78</em>
+		</div>
+		<div class="itm">
+			<em class="fb">评论</em> : 暂无评论
+		</div>
+	</div>
+</body>
+</html>

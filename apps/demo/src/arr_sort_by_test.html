@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="cpViewpoint" content="width=device-width,inital-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui;">
+    <title id="document-title">车主社区</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <div id="nc-body" data-version="1.0" data-name="community"></div>
+    <script src="js/Nice-1.0.0.js"></script>
+    <script src="js/Nice.lib-1.0.0.js"></script>
+    <script>
+        //////////////// 对象数组多属性排序
+        //排序要求：
+        //按credit降序=>price升序=>likes降序的优先级进行排序
+        var arr=[{
+            name:'卡西欧',
+            credit:1,
+            detail:{
+                price:'$100',
+                likes:100
+            }
+        },{
+            name:'Tissot',
+            credit:2,
+            detail:{
+                price:'$500',
+                likes:500
+            }
+        },{
+            name:'Swatch',
+            credit:2,
+            detail:{
+                price:'$100',
+                likes:100
+            }
+        },{
+            name:'Rado',
+            credit:2,
+            detail:{
+                price:'$800',
+                likes:100
+            }
+        },{
+            name:'Longines',
+            credit:2,
+            detail:{
+                price:'$800',
+                likes:500
+            }
+        },{
+            name:'OMEGA',
+            credit:2,
+            detail:{
+                price:'$1000',
+                likes:100
+            }
+        },{
+            name:'罗西尼',
+            credit:0.5,
+            detail:{
+                price:'$1000',
+                likes:100
+            }
+        },{
+            name:'天王',
+            credit:0.8,
+            detail:{
+                price:'$400',
+                likes:100
+            }
+        },{
+            name:'海鸥',
+            credit:1,
+            detail:{
+                price:'$400',
+                likes:100
+            }
+        }];
+        arr.sortBy({
+                    asc:false,
+                    filter:function(v){
+                        return v.credit;
+                    }
+                }
+                ,{
+                    asc:true,
+                    filter:function(v){
+                        return +v.detail.price.match(/\d+/)[0];
+                    }
+                }
+                ,{
+                    asc:false,
+                    filter:function(v){
+                        return v.detail.likes;
+                    }
+                }
+        );
+        console.log(JSON.stringify(arr));
+    </script>
+</body>
+</html>

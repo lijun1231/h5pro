@@ -1,0 +1,25 @@
+{
+  "name": "性能检测",
+  "manifest_version": 2,
+  "version": "1.0",
+  "description": "性能检测，点击就可以检测到啦",
+  "browser_action": {
+    "default_icon": "images/logo.png",
+    "default_title":"性能检测，请点击"
+  },
+  "background": {
+    "scripts":["js/background.js"],
+    "persistent": false
+  },
+  "permissions":[
+    "https://*/",
+    "http://*/",
+    "notifications",
+    "activeTab"
+  ],
+  "update_url":"http://192.168.101.7/h5pro/apps/chrome_plugins/Performance",
+  "content_scripts": [{
+    "matches": ["http://*/*","https://*/*"],
+    "js": ["js/1.js"]
+  }]
+}

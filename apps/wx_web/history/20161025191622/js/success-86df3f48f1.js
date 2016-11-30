@@ -1,0 +1,1 @@
+!function(){var a=($(j_m.currPage[0]),j_m.currPage);a.hook(function(){Junb.addClass(a[0],"ready")})}();
