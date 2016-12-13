@@ -4,7 +4,7 @@
 require.config({
     baseUrl:'js/mod',
     paths:{
-        "Junb":"/h5pro/pub/static/js/Junb-1.2.2",
+        "Junb":"/h5pro/pub/static/js/Junb-1.2.2.js",
         "jquery":"/h5pro/pub/static/js/jquery",
         "underscore":"../underscore",
         "backbone":"../backbone"
