@@ -1,0 +1,95 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" data-page="insurance" id="cpViewpoint" content="width=device-width,inital-scale=1.600,maximum-scale=1.600,user-scalable=no,minimal-ui;">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="微信路况电子狗">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="js/base.js?v=1.0"></script>
+    <link href="css/style.css?v=1.0" type="text/css" rel="stylesheet"/>
+    <link href="css/carpool.css?v=1.0" type="text/css" rel="stylesheet"/>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/desk_icon_72.png?v=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/desk_icon_72.png?v=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/desk_icon_114.png?v=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/desk_icon_114.png?v=1.0">
+    <title>免费保险</title>
+</head>
+<body>
+    <div class="pg-header">
+        <ul class="flist">
+            <li class="hasborder"><i class="pg-header-pic"><img src="images/car2.png"/></i><span class="cl-org pg-header-txt">我是车主，获赠保险，为行程投保～</span></li>
+        </ul>
+    </div>
+    <div class="pool-box">
+        <ul class="flist noborder">
+            <li class="hasborder"><h4 class="cl-grey">以下信息不会用于商业用途，请放心填写，并确认信息填写正确。</h4></li>
+            <li><label class="flist-tit lab-t">真实姓名：</label><span class="flist-sub"><input type="text" placeholder="请填写真实姓名" class="inp" id="upload-name" data-format-null="真实姓名不能为空" maxlength="10"/></span></li>
+            <li><label class="flist-tit lab-t">身份证号：</label><span class="flist-sub"><input type="text" placeholder="请输入身份证号码" class="inp" id="upload-card" data-format-null="身份证号不能为空" maxlength="18"/></span></li>
+            <li><label class="flist-tit lab-t">车型：</label><span class="flist-sub" id="upload-car">SUV 奥迪 Q5 颜色：白色</span></li>
+            <li><label class="flist-tit lab-t">车牌号：</label>
+                    <span class="flist-sub">
+                        <select class="sel" id="upload-platetype">
+                            <option value="京">京</option>
+                            <option value="新">新</option>
+                            <option value="藏">藏</option>
+                            <option value="青">青</option>
+                            <option value="桂">桂</option>
+                            <option value="沪">沪</option>
+                            <option value="渝">渝</option>
+                            <option value="冀">冀</option>
+                            <option value="晋">晋</option>
+                            <option value="蒙">蒙</option>
+                            <option value="辽">辽</option>
+                            <option value="吉">吉</option>
+                            <option value="黑">黑</option>
+                            <option value="苏">苏</option>
+                            <option value="浙">浙</option>
+                            <option value="皖">皖</option>
+                            <option value="闽">闽</option>
+                            <option value="赣">赣</option>
+                            <option value="鲁">鲁</option>
+                            <option value="豫">豫</option>
+                            <option value="鄂">鄂</option>
+                            <option value="湘">湘</option>
+                            <option value="粤">粤</option>
+                            <option value="琼">琼</option>
+                            <option value="川">川</option>
+                            <option value="陕">陕</option>
+                            <option value="甘">甘</option>
+                            <option value="宁">宁</option>
+                            <option value="贵">贵</option>
+                            <option value="云">云</option>
+                        </select>
+                        <input type="text" placeholder="请输入车牌号" class="inp f-right" style="width:80%;" id="upload-platecode" data-format-null="车牌号不能为空" maxlength="6"/>
+                    </span>
+            </li>
+            <li><label class="flist-tit lab-t">联系人：</label><span class="flist-sub" id="upload-contact">张先生</span></li>
+            <li><label class="flist-tit lab-t">联系电话：</label><span class="flist-sub"><input type="text" placeholder="请填写手机号码" value="15010571787" class="inp" id="upload-phone" data-format-null="联系电话不能为空" maxlength="11"/></span></li>
+            <li class="hasborder"><label class="flist-tit lab-t"><input type="text" placeholder="请输入您收到的验证码" class="inp" style="margin-top:0.4rem;width:10rem;" id="upload-code" data-format-null="验证码不能为空" maxlength="6"/></label><span class="flist-sub t-right"><button class="subt lb h4" id="upload-codebt">发送短信验证码</button></span></li>
+        </ul>
+    </div>
+    <div class="pool-box">
+        <ul class="flist noborder">
+            <li class="cl-org" data-protocol="insurance3"><label class="flist-tit lab-t">赠：春节安全险</label><span class="flist-sub t-right">1份</span></li>
+            <li><label class="flist-tit lab-t"></label><span class="flist-sub cl-grey">*本平台所有参与用户，都可获赠春节安全险（保险是否生效，以保险公司下发短信为准），活动期间每人限赠1次。</span></li>
+        </ul>
+    </div>
+    <div class="ass-box">
+        <em class="checkbox-itm"><input type="checkbox" id="agree-ckb" /></em><label for="agree-ckb" class="t-line">我确认投保人为本人，已阅读并接受</label><em class="cl-org t-line" data-protocol="insurance">《保险条款》</em><label for="agree-ckb" class="t-line">和</label><em class="cl-org t-line" data-protocol="insurance2">《投保须知》</em>
+    </div>
+    <button class="subt" id="upload-bt" data-maidian-key="insurance_next">下一步</button>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?v=1.0"></script>
+    <script type="text/javascript" src="../../global/static/js/Base64.js?v=1.0"></script>
+    <script type="text/javascript" src="js/jquery.js?v=1.0"></script>
+    <script type="text/javascript" src="js/touch.js?v=1.0"></script>
+    <script type="text/javascript" src="js/extend.js?v=1.0"></script>
+    <script type="text/javascript" src="js/lib.js?v=1.0"></script>
+    <script type="text/javascript" src="js/carpool.js?v=1.0"></script>
+    <script type="text/javascript" src="js/insurance.js?v=1.0"></script>
+</body>
+</html>
+

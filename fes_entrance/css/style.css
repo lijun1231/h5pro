@@ -1,0 +1,81 @@
+﻿/**
+* 全站基本样式配置
+* @author 李君
+* @date 2015年12月24日 15:11:34
+*/
+/*配置*/
+html,body{
+-webkit-text-size-adjust:none;
+-moz-text-size-adjust:none;
+-ms-text-size-adjust:none;
+text-size-adjust : none;
+height:100%;
+}
+body {overflow:hidden; margin:0; padding:0; font:16px "微软雅黑",san-serif;background:#fee8d0;color:#3c3c3c;transition:transform 1s,opacity 1s;-webkit-transition:-webkit-transform 1s,opacity 1s;}
+body.out{transform:scale(1.1);-webkit-transform:scale(1.1);opacity:0;}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p{padding:0; margin:0;}
+table,td,tr,th{font-size:16px;}
+li{list-style-type:none;}
+img{vertical-align:top;border:0;}
+ol,ul {list-style:none;}
+h1,h2,h3,h4,h5,h6{display:inline-block; font-size:16px; font-weight:normal;}
+h1,.h1{font-size:1.5rem;}
+h2,.h2{font-size:1.3rem;}
+h3,.h3{font-size:1rem;}
+h4,.h4{font-size:0.9rem;}
+h5,.h5{font-size:0.8rem;}
+h6,.h6{font-size:0.7rem;}
+address,cite,code,em,th {font-weight:normal; font-style:normal;}
+.fB{font-weight:bold;}
+.f12px{font-size:12px;}
+.f14px{font-size:14px;}
+.left{float:left;}
+.right{float:right;}
+a {color:#2b2b2b; text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {color:#ba2636;text-decoration:underline;}
+a:active {color:#ba2636;}
+i,b,em{font-style:normal;font-weight:normal;}
+input,button,select{-webkit-appearance: none;border:none; border-radius:0;outline:none;}
+.banner{position:relative; width:100%;height:40%;}
+.banner>i{display:block;width:100%;height:100%;background:url(../images/banner_02.png) no-repeat bottom center;background-size:cover;animation:anm1 5s;-webkit-animation:anm1 5s;}
+@keyframes anm1{
+    0%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+@-webkit-keyframes anm1{
+    0%{-webkit-transform:scale(1.1);}
+    100%{-webkit-transform:scale(1);}
+}
+.banner>em{position:absolute;z-index:1;bottom:0;left:3%;width:94%; height:3rem;background:url(../images/tit.png) no-repeat center center;background-size:contain;animation:anm2 2s ease-out; -webkit-animation:anm2 2s ease-out;transform-origin:30% 20rem;-webkit-transform-origin:30% 20rem;}
+@keyframes anm2{
+    0%{transform:rotate(30deg);opacity:0;}
+    50%{transform:rotate(0deg);opacity:1;}
+}
+@-webkit-keyframes anm2{
+    0%{-webkit-transform:rotate(30deg);opacity:0;}
+    50%{-webkit-transform:rotate(0deg);opacity:1;}
+}
+.btlist{ box-sizing:border-box;padding-top:5%;padding-bottom:2rem; width:100%;height:60%;}
+.btlist>li{box-sizing:border-box;padding:0 1rem 1rem;width:100%;height:33.33%;}
+.btlist-itm{ position:relative;height:100%;width:100%;color:#fff;border-radius:0.3rem;overflow:hidden;}
+.btlist-itm>i{box-sizing:border-box;display:block;width:80%;height:100%;background-origin:content-box; background-repeat:no-repeat;background-position:bottom left;background-size:contain;}
+.btlist-itm>em{position:absolute;top:0; right:0;width:20%;height:100%;}
+.btlist-itm>em>cite{position:absolute;height:3rem;width:100%;line-height:1.5rem; text-align:center;top:0;bottom:0;margin:auto;}
+.btlist>li:nth-child(1)>.btlist-itm>i{background-color:#fa6f54;background-image: url(../images/btfront1.png);}
+.btlist>li:nth-child(2)>.btlist-itm>i{background-color:#feca39;background-image: url(../images/btfront2.png);}
+.btlist>li:nth-child(3)>.btlist-itm>i{background-color:#eb5d41;background-image: url(../images/btfront3.png);}
+.btlist>li:nth-child(1) em{background-color:#eb5d41;}
+.btlist>li:nth-child(2) em{background-color:#e7b018;}
+.btlist>li:nth-child(3) em{background-color:#fa6f54;}
+.to-volation{position:absolute;bottom:0;left:0;right:0; background:#feca39;color:#fff;height:2rem; line-height:2rem;}
+.to-volation>span{box-sizing:border-box; position:absolute; width:50%;}
+.to-volation>span:nth-child(1){left:3rem;}
+.to-volation>span:nth-child(2){right:0;}
+@media screen and (orientation:landscape) {
+    .banner{height:30%;overflow:hidden;}
+    .btlist{padding-top:0.5rem;height:70%;}
+    .btlist>li{padding-bottom:0.3rem;}
+}
+.orienland-box-cvs{z-index:99999;position:fixed;display:none;top:0;left:0;}
+.orienland-box-layer{z-index:99998;position:fixed;display:none;background:rgba(0,0,0,0.5);top:0;left:0;right:0;bottom:0;}

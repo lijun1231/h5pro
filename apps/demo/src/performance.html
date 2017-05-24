@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="cpViewpoint" content="width=device-width,inital-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui;" />
+    <link rel="dns-prefetch" href="http://wxlk.chetuobang.com" />
+    <title id="document-title">测试性能</title>
+    <script>
+        let startTime = +Date.now();
+    </script>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/community.css"/>
+    <link rel="stylesheet" href="css/test_performance.css"/>
+    <style type="text/css">
+        /* 内嵌样式 */
+        .inp{
+            padding: 0 0.5rem;
+        }
+        #cc{
+            width:100px;
+            height:100px;
+            background:#abcdef;
+        }
+
+    </style>
+    <script>
+        let endTime = +Date.now();
+        console.log(endTime - startTime);
+    </script>
+</head>
+<body>
+    <div class="hello">
+        <div class="box">
+            <div class="box-left wrap t-right">姓名：</div>
+            <div class="box-right"><input type="text" class='inp' style='background:#fff;' id='my-name'></div>
+        </div>
+        <div class="box">
+            <div class="box-left wrap t-right">随机串：</div>
+            <div class="box-right"><input type="text" class='inp' style='background:#fff;' id='my-code-size'></div>
+        </div>
+        <button class="subt" onclick='changeName();'>运行一下</button>
+    </div>
+    <script src="http://wxlk.chetuobang.com/h5base/pub/static/js/Base64.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/main2.js"></script>
+    <script>
+        let d_inp = document.getElementById('my-name');
+        let d_code = document.getElementById('my-code-size');
+        let a = new Main2();
+        d_inp.value = a.getName();
+        console.log(a.getName());
+        let changeName = () => {
+            // 设置名字
+            a.setName(d_inp.value);
+            console.log(`姓名：${a.getName()}`); // 输出新名字
+
+            // 生成随机串
+            let cLen = parseInt(d_code.value);
+            let str = createRandomAlphaNum(Math.pow(2, cLen));
+            console.log('获取随机串完成'); // 输出随机串
+            let arr = str.split(''); // 将随机串打成数组
+            console.log('已转成数组'); // 输出随机串
+            // 开始排序
+            // sr.bubbling(arr);
+            sr.quickSort(arr);
+            console.log('排序完成'); // 输出随机串
+            // console.log(str);
+            // str = arr.join();
+            // console.log(str);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+/* 本文件用于测试 */
+/* 创建人：李君 */
+/*******************/
+
+.box{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background: #eee;
+
+}
+.hello{
+    color:#333;
+}
+.box-left{
+    width:100px;
+}
+.box-right{
+    /*width:10px;*/
+}

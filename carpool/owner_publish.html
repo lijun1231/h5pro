@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" data-page="owner_publish" id="cpViewpoint" content="width=device-width,inital-scale=1.600,maximum-scale=1.600,user-scalable=no,minimal-ui;">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="微信路况电子狗">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="js/base.js?v=1.0"></script>
+    <link href="css/style.css?v=1.0" type="text/css" rel="stylesheet"/>
+    <link href="js/plugins/mobiscroll.css?v=1.0" type="text/css" rel="stylesheet"/>
+    <link href="css/carpool.css?v=1.0" type="text/css" rel="stylesheet"/>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/desk_icon_72.png?v=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/desk_icon_72.png?v=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/desk_icon_114.png?v=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/desk_icon_114.png?v=1.0">
+    <title>我是车主</title>
+</head>
+<body>
+    <div class="pg-header">
+        <ul class="flist">
+            <li class="hasborder"><i class="pg-header-pic"><img src="images/car2.png"/></i><span class="cl-org pg-header-txt">我是车主，发布行程，让乘客找到我～</span></li>
+        </ul>
+    </div>
+    <div class="fil-box">
+        <ul class="flist">
+            <li><label class="flist-tit lab-t">出发：</label><span class="flist-sub i i1"><input type="text" placeholder="请选择" class="inp" data-place="3" readonly="readonly" data-format-null="出发地点不能为空" id="upload-place-s"/></span></li>
+            <li class="ticket-dot ticket-dot-bottom"><label class="flist-tit lab-t">到达：</label><span class="flist-sub i i2"><input type="text" placeholder="请选择" class="inp" data-place="3" readonly="readonly" data-format-null="到达地点不能为空" id="upload-place-e"/></span></li>
+            <li class="ticket-dot ticket-dot-top"><label class="flist-tit lab-t">出发时间：</label><span class="flist-sub i i3"><input type="text" placeholder="请选择" class="inp cl-org" data-date-timerange-select="true" readonly="readonly" data-format-null="出发时间不能为空" id="upload-date" /></span></li>
+        </ul>
+    </div>
+    <div class="pool-box">
+        <ul class="flist noborder">
+            <li><label class="flist-tit lab-t">选择车型：</label><span class="flist-sub"><input type="text" placeholder="请选择" class="inp" data-car="" readonly="readonly" data-format-null="车型不能为空" id="upload-car"/></span></li>
+            <li><label class="flist-tit lab-t">颜色：</label><span class="flist-sub">
+                    <select class="sel" id="upload-color">
+                        <option value="1">白色</option>
+                        <option value="2">黑色</option>
+                        <option value="3">黄色</option>
+                        <option value="4">蓝色</option>
+                        <option value="5">红色</option>
+                        <option value="6">紫色</option>
+                        <option value="7">金色</option>
+                        <option value="8">银色</option>
+                        <option value="0">其它</option>
+                    </select>
+                </span></li>
+            <li><label class="flist-tit lab-t">可提供的座位：</label><span class="flist-sub t-right"><span class="numPlusMinus" id="sel-seat"><input type="text" value="4" readonly="readonly" id="upload-seat"/></span></span></li>
+            <li><label class="flist-tit lab-t">每座价格（单位：元）：</label><span class="flist-sub"><input type="text" placeholder="例：100" class="inp t-right"  data-format-null="每座价格不能为空" maxlength="4" id="upload-price"/></span></li>
+            <li>
+                <label class="flist-tit lab-t">联系人：</label>
+                    <span class="flist-sub">
+                        <input type="text" placeholder="填写姓氏" class="inp f-left" style="width:100px;" data-format-null="联系人不能为空" id="upload-contact"  maxlength="10"/>
+                        <span class="flist-sub-itm f-right">
+                            <em class="radio-itm"><input type="radio" name="sel-sex" class="sel-sex" id="sel-sex-male" value="1" checked="checked"/></em><label for="sel-sex-male">男</label>
+                            <em class="radio-itm"><input type="radio" name="sel-sex" class="sel-sex" id="sel-sex-female" value="2" /></em><label for="sel-sex-female">女</label>
+                        </span>
+                        <div class="clear-fix"></div>
+                    </span>
+            </li>
+            <li class="hasborder"><label class="flist-tit lab-t">联系电话：</label><span class="flist-sub"><input type="text" placeholder="请输入手机号码" value="" class="inp" id="upload-phone" data-format-null="联系电话不能为空" maxlength="11"/></span></li>
+            <li class="hasborder"><label class="flist-tit lab-t">备注：</label><span class="flist-sub"><textarea class="area" id="upload-note" placeholder="如后备箱剩余空间不足，有小孩、宠物同行等，不超过50个字" maxlength="50"></textarea></span></li>
+        </ul>
+    </div>
+    <div class="ass-box">
+        <em class="checkbox-itm"><input type="checkbox" id="agree-ckb" /></em><label for="agree-ckb" class="t-line">我同意春节</label><em class="cl-org t-line" data-protocol="carpool">拼车条款</em>
+    </div>
+    <button class="subt" id="upload-bt" data-maidian-key="publish_next">下一步</button>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?v=1.0"></script>
+    <script type="text/javascript" src="../../global/static/js/Base64.js?v=1.0"></script>
+    <script type="text/javascript" src="js/jquery.js?v=1.0"></script>
+    <script type="text/javascript" src="js/touch.js?v=1.0"></script>
+    <script type="text/javascript" src="js/extend.js?v=1.0"></script>
+    <script type="text/javascript" src="js/plugins/mobiscroll.js?v=1.0"></script>
+    <script type="text/javascript" src="js/lib.js?v=1.0"></script>
+    <script type="text/javascript" src="js/carpool.js?v=1.0"></script>
+    <script type="text/javascript" src="js/owner_publish.js?v=1.0"></script>
+</body>
+</html>
+

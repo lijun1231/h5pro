@@ -1,8 +1,8 @@
-//´´½¨Ê±¼ä£º2016Äê7ÔÂ6ÈÕ 15:45:49
-//´´½¨ÈË£ºÀî¾ı
-//ËµÃ÷£ºÊ×Ò³
+//åˆ›å»ºæ—¶é—´ï¼š2016å¹´7æœˆ6æ—¥ 15:45:49
+//åˆ›å»ºäººï¼šæå›
+//è¯´æ˜ï¼šé¦–é¡µ
 !function(){
-    var $page=$(j_m.currPage[0]);
-    console.log($page);
-    console.log('main.js');
+    // var $page=$(j_m.currPage[0]);
+    // console.log($page);
+    // console.log('main.js');
 }();

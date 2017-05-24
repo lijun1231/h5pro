@@ -1,10 +1,22 @@
 /**
  * Created by junli on 2016/12/13.
  */
-function greeter(person) {
-    return "Hello, " + person;
+class Student {
+    fullName: string;
+    constructor(public firstName, public middleInitial, public lastName) {
+        this.fullName = firstName + " " + middleInitial + " " + lastName;
+    }
 }
 
-var user = "Jane User";
+interface Person {
+    firstName: string;
+    lastName: string;
+}
+
+function greeter(person : Person) {
+    return "Hello, " + person.firstName + " " + person.lastName;
+}
+
+var user = new Student("Jane", "M.", "User");
 
 document.body.innerHTML = greeter(user);

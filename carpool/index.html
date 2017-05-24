@@ -1,0 +1,113 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" data-page="index" id="cpViewpoint" content="width=device-width,inital-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui;">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="微信路况电子狗">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="js/base.js?v=1.0"></script>
+    <link href="css/style.css?v=1.0" type="text/css" rel="stylesheet"/>
+    <link href="js/plugins/mobiscroll.css?v=1.0" type="text/css" rel="stylesheet"/>
+    <link href="css/carpool.css?v=1.0" type="text/css" rel="stylesheet"/>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/desk_icon_72.png?v=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/desk_icon_72.png?v=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/desk_icon_114.png?v=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/desk_icon_114.png?v=1.0">
+    <title>春节拼车</title>
+</head>
+<body>
+    <div class="fil-box">
+        <ul class="flist">
+            <li><label class="flist-tit lab-t">出发：</label><span class="flist-sub i i1"><input type="text" placeholder="请选择" id="filter-startplace" class="inp" data-place="2" readonly="readonly"/></span></li>
+            <li class="ticket-dot ticket-dot-bottom"><label class="flist-tit lab-t">到达：</label><span class="flist-sub i i2"><input type="text" placeholder="请选择" id="filter-endplace" class="inp ind-city" data-place="2" readonly="readonly"/></span></li>
+            <li class="ticket-dot ticket-dot-top"><label class="flist-tit lab-t">出发时间：</label><span class="flist-sub i i3"><input type="text" placeholder="请选择" id="filter-date" data-date-timerange-select="true" data-date-timerange-allday="true" class="inp cl-org" value="" readonly="readonly" /></span></li>
+        </ul>
+    </div>
+    <div class="pool-box">
+        <div class="pool-box-hd itm" id="search-box">
+            <button class="subt" id="filter-subt" data-maidian-key="main_search">搜索</button>
+            <em class="h4">搜索结果</em>
+        </div>
+        <!--<ul class="pool-box-list">-->
+            <!--<li data-href="tripde.html">-->
+                <!--<h3>2015年12月24日 8:00-12:00</h3>-->
+                <!--<div class="pool-box-list-box">-->
+                    <!--<i class="responsive-pic"><img src="images/test.png"/></i>-->
+                    <!--<div class="pool-box-list-box-con">-->
+                        <!--<span class="wrap"><em>北京海淀区</em><em>-</em><em>成都市都江堰</em></span>-->
+                        <!--<span class="cl-grey">张先生</span>-->
+                        <!--<span class="cl-grey">SUV 奥迪A3 白色</span>-->
+                    <!--</div>-->
+                    <!--<div class="pool-box-list-box-tip">-->
+                        <!--<span class="cl-org"><h2>300元</h2>/座</span>-->
+                        <!--<h4 class="cl-grey">剩余座位：<em class="cl-org">2</em></h4>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="clear-fix"></div>-->
+            <!--</li>-->
+        <!--</ul>-->
+        <ul class="pool-box-list" id="trip-list">
+        </ul>
+        <div class="loadingmore" id="loadingmore">
+            <div class="loader-inner">
+                <div class="pacman">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="icon to-trip" id="to-trip" data-maidian-key="main_totrip"></a>
+    <!--弹出框-->
+    <div class="model-pop noradius iden-box" id="model-pop1" style="overflow-y:auto;">
+        <div class="model-pop-box">
+            <div class="iden-box-roll"><img src="images/banner.png"/><i data-href="http://www.didapinche.com/app/new/?t=chetuobang" data-maidian-key="main_dd"></i></div>
+            <div class="iden-box-sub">
+                <div class="t-center iden-box-sub-tit">
+                    <h3>请选择您的身份</h3>
+                    <div class="h5 cl-grey">（在2016年1月20日-2月22日期间，您只能选择一个身份）</div>
+                </div>
+                <div class="iden-box-sub-con">
+                    <section class="t-center" id="to-owner" data-maidian-key="main_owner">
+                        <i class="disp-lb"><img src="images/car1.png"/></i>
+                        <span class="disp-b">
+                            <em class="disp-b">我是车主</em>
+                            <h4 class="disp-b cl-grey"><b class="disp-lb">慢慢长路</b><b class="disp-lb">谁人能与我同行</b></h4>
+                        </span>
+                    </section>
+                    <section class="t-center" id="to-passer" data-maidian-key="main_psr">
+                        <i class="disp-lb"><img src="images/passer.png"/></i>
+                        <span class="disp-b">
+                            <em class="disp-b">我是乘客</em>
+                            <h4 class="disp-b cl-grey"><b class="disp-lb">春节拼车</b><b class="disp-lb">好心人求捎一段</b></h4>
+                        </span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="model-pop" id="model-pop2">
+        <div class="model-pop-box t-center share-qrcode">
+            <h3>在微信路况中使用拼车，才可以看到车主详细联系方式哦~</h3>
+            <img src="images/qrcode_wxlk.jpg"/>
+        </div>
+    </div>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?v=1.0"></script>
+    <script type="text/javascript" src="../../global/static/js/Base64.js?v=1.0"></script>
+    <script type="text/javascript" src="js/jquery.js?v=1.0"></script>
+    <script type="text/javascript" src="js/touch.js?v=1.0"></script>
+    <script type="text/javascript" src="js/extend.js?v=1.0"></script>
+    <script type="text/javascript" src="js/plugins/mobiscroll.js?v=1.0"></script>
+    <script type="text/javascript" src="js/lib.js?v=1.0"></script>
+    <script type="text/javascript" src="js/carpool.js?v=1.0"></script>
+    <script type="text/javascript" src="js/index.js?v=1.0"></script>
+</body>
+</html>
+

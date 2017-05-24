@@ -614,5 +614,36 @@ function librarycallback($){
             console.log('准备新页面时间耗时: ' + readyStart);console.log('redirect 重定向耗时: ' + redirectTime);console.log('Appcache 耗时: ' + appcacheTime);console.log('unload 前文档耗时: ' + unloadEventTime);console.log('DNS 查询耗时: ' + lookupDomainTime);console.log('TCP连接耗时: ' + connectTime);console.log('request请求耗时: ' + requestTime);console.log('请求完毕至DOM加载: ' + initDomTreeTime);console.log('解释dom树耗时: ' + domReadyTime);console.log('从开始至load总耗时: ' + loadTime);
         }
     };
+    Util.sort=function(){
+        const sort = (arr, lt) => { // 插入排序做个例子，可以换其他效率高的
+            const len = arr.length;
+            if (len === 1) return arr;
+            for (let i = 1; i < len; i++) {
+                let j = i;
+                while ((j > 0) && lt(arr[j], arr[j - 1])) { // j < j-1
+                    const jj = arr[j];
+                    const jj1 = arr[j - 1];
+                    arr[j] = jj1;
+                    arr[j - 1] = jj;
+                    j -= 1;
+                }
+            }
+            return arr;
+        }
+        const msort = (arr, ...lts) => {
+            let len = lts.length;
+            let x = arr;
+            while (len--) {
+                x = sort(arr, lts[len]);
+            }
+            return x;
+        };
+        const sarr = msort(arr,
+            ((a, b) => a.credit > b.credit), // 降序
+            ((a, b) => Number(a.detail.price.substr(1)) < Number(b.detail.price.substr(1))), // 升序
+            ((a, b) => a.detail.likes > b.detail.likes) // 降序
+        );
+        console.log(sarr);
+    }
     return Util;
 }

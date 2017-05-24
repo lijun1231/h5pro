@@ -18,10 +18,11 @@ require.config({
     }
 });
 require(["Nice", "lib", "algorithms/quick_sort", "algorithms/bubbling"], function (_, _lib, quickSort, bubbling) {
-    //console.log(arguments);
+    console.log(arguments);
     //var arr=[9,9,8,7,12,3,45,76,10,2,125,0,-10];
     //console.log(quickSort((arr)));//快速排序
     //console.log(bubbling((arr)));//冒泡排序
+
 
 });
 

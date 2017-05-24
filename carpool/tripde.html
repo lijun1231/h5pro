@@ -1,0 +1,133 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" data-page="tripde" id="cpViewpoint" content="width=device-width,inital-scale=1.600,maximum-scale=1.600,user-scalable=no,minimal-ui;">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="微信路况电子狗">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="js/base.js?v=1.0"></script>
+    <link href="css/style.css?v=1.0" type="text/css" rel="stylesheet"/>
+    <link href="css/carpool.css?v=1.0" type="text/css" rel="stylesheet"/>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/desk_icon_72.png?v=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/desk_icon_72.png?v=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/desk_icon_114.png?v=1.0">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/desk_icon_114.png?v=1.0">
+    <title>行程详情</title>
+</head>
+<body>
+    <div class="ass-box">
+        <em class="cl-grey">温馨提示：本平台仅提供信息匹配和展示，建议您上车前认真核实车主身份信息。</em>
+    </div>
+    <div class="pool-box">
+        <ul class="flist noborder" id="tripdelist">
+            <!--<li class="hasborder">-->
+            <!--<span class="flist-tit"></span>-->
+            <!--<span class="flist-sub tripde-sche">-->
+            <!--<h2 class="cl-org">北京-四川达州</h2>-->
+            <!--<h4>2015年12月26日 08:00-12:00</h4>-->
+            <!--<h4 class="cl-grey">约1800公里  预计25小时</h4>-->
+            <!--</span>-->
+            <!--</li>-->
+            <!--<li><label class="flist-tit lab-t">车型：</label><span class="flist-sub">SUV 奥迪 Q5 颜色：白色</span></li>-->
+            <!--<li><label class="flist-tit lab-t">联系人：</label><span class="flist-sub">张先生</span></li>-->
+            <!--<li><label class="flist-tit lab-t">剩余座位：</label><span class="flist-sub">2</span></li>-->
+            <!--<li><label class="flist-tit lab-t">费用：</label><span class="flist-sub" data-price="500" id="upload-price">500元/人</span></li>-->
+            <!--<li class="hasborder"><label class="flist-tit lab-t">备注：</label><span class="flist-sub">后备箱剩余空间不足，有小孩，宠物同行</span></li>-->
+        </ul>
+    </div>
+    <div id="passer-tab" class="tripde-tab">
+        <div class="pool-box" style="margin-top:0.6rem;">
+            <ul class="flist noborder">
+                <li><label class="flist-tit lab-t">预定座位：</label><span class="flist-sub t-right"><span class="numPlusMinus" id="sel-seat"><input type="text" id="upload-seat" value="1" readonly="readonly" /></span></span></li>
+                <li class="hasborder"><label class="flist-tit lab-t">共需：</label><span class="flist-sub"><h5 class="cl-grey">(请联系车主确定行程后，支付给车主)</h5><h2 class="cl-org f-right" data-sum="0" id="upload-sum">0元</h2></span></li>
+                <li class="hasborder"><label class="flist-tit lab-t"></label><span class="flist-sub cl-grey">*本平台所有参与用户，都可获赠春节安全险（保险是否生效，以保险公司下发短信为准），活动期间每人限赠1次。</span></li>
+            </ul>
+        </div>
+        <div class="ass-box">
+            <em class="checkbox-itm"><input type="checkbox" id="agree-ckb" /></em><label for="agree-ckb" class="t-line">我同意春节</label><em class="cl-org t-line" data-protocol="carpool">拼车条款</em>
+        </div>
+    </div>
+    <div id="passer2-tab" class="tripde-tab">
+        <div class="pool-box" style="margin-top:0.6rem;">
+            <ul class="flist noborder">
+                <li class="clear-after resp-list-item">
+                    <label class="flist-tit lab-t h4" style="width:65%;line-height:200%;">
+                        限量赠送健康大礼包：<br/>
+                        微信运动步数可以免费换领重疾保险啦，<br/>
+                        马上去抢免费体验资格！
+                    </label>
+                    <span class="flist-sub t-right"><button class="subt lb bt-red" style="width:90%;margin-top:2rem;" data-href="http://bububao.zhongan.com/index.php?r=bububao%2Fscore&from=weixinlukuan">立即开抢</button></span>
+                    <div class="clear-fix"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="ass-box">
+            <em class="cl-org cl-grey">*因保险生效时间限制，出发前24小时内本平台不可取消发布</em>
+        </div>
+    </div>
+    <div id="owner-tab" class="tripde-tab">
+        <div class="pool-box" style="margin-top:0.6rem;">
+            <ul class="flist noborder">
+                <li class="cl-org" data-protocol="insurance3"><label class="flist-tit lab-t">赠：春节安全险</label><span class="flist-sub t-right">1份</span></li>
+                <li><label class="flist-tit lab-t">车主：</label><span class="flist-sub" id="tripde-owner"></span></li>
+                <li><label class="flist-tit lab-t">乘客：</label><span class="flist-sub" id="tripde-passenger-list"></span></li>
+                <li class="clear-after resp-list-item">
+                    <label class="flist-tit lab-t h4" style="width:65%;line-height:200%;">
+                        限量赠送健康大礼包：<br/>
+                        微信运动步数可以免费换领重疾保险啦，<br/>
+                        马上去抢免费体验资格！
+                    </label>
+                    <span class="flist-sub t-right"><button class="subt lb bt-red" style="width:90%;margin-top:2rem;" data-href="http://bububao.zhongan.com/index.php?r=bububao%2Fscore&from=weixinlukuan" data-maidian-key="tripde_insurance">立即开抢</button></span>
+                    <div class="clear-fix"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="ass-box">
+            <em class="cl-org cl-grey">*因保险生效时间限制，出发前24小时内本平台不可取消发布</em>
+        </div>
+    </div>
+    <button class="subt" id="upload-bt">联系车主，立即拼车</button>
+    <!--弹出框-->
+    <div class="model-pop" id="model-pop1">
+        <div class="model-pop-box nopadding">
+            <div class="ass-box t-justify">
+                <em class="cl-grey">为了保护车主隐私，我们每天仅提供10个车主电话。超过限制的话，我们将推送您的信息给车主，由车主与您联系。</em>
+            </div>
+            <div class="pool-box">
+                <ul class="flist noborder">
+                    <li>
+                        <label class="flist-tit lab-t" >联系人：</label>
+                            <span class="flist-sub clear-after">
+                                <input type="text" placeholder="填写姓氏" class="inp f-left" id="upload-contact" style="width:100px;" data-format-null="联系人不能为空" maxlength="10"/>
+                                <span class="flist-sub-itm f-right">
+                                    <em class="radio-itm"><input type="radio" name="sel-sex" class="sel-sex" id="sel-sex-male" value="1" checked="checked"/></em><label for="sel-sex-male">男</label>
+                                    <em class="radio-itm"><input type="radio" name="sel-sex" class="sel-sex" id="sel-sex-female" value="2" /></em><label for="sel-sex-female">女</label>
+                                </span>
+                            </span>
+                    </li>
+                    <li><label class="flist-tit lab-t">备注：</label><span class="flist-sub"><textarea class="area" id="upload-note" placeholder="如后备箱剩余空间不足，有小孩、宠物同行等，不超过50个字" maxlength="50"></textarea></span></li>
+                </ul>
+                <ul class="flist noborder">
+                    <li><label class="flist-tit lab-t">真实姓名：</label><span class="flist-sub"><input type="text" placeholder="请填写真实姓名" class="inp" id="upload-name" data-format-null="真实姓名不能为空" maxlength="10"/></span></li>
+                    <li><label class="flist-tit lab-t">身份证号：</label><span class="flist-sub"><input type="text" placeholder="请输入身份证号码" class="inp" id="upload-card" data-format-null="身份证号不能为空" maxlength="18"/></span></li>
+                    <li><label class="flist-tit lab-t">联系电话：</label><span class="flist-sub"><input type="text" placeholder="请填写手机号码" class="inp" id="upload-phone" data-format-null="联系电话不能为空" maxlength="11"/></span></li>
+                    <li><label class="flist-tit lab-t"><input type="text" placeholder="请输入您收到的验证码" class="inp" style="margin-top:0.4rem;width:7rem;" id="upload-code" data-format-null="验证码不能为空" maxlength="6"/></label><span class="flist-sub t-right"><button class="subt lb h4" id="upload-codebt" style="min-width:80%;">发送短信验证码</button></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?v=1.0"></script>
+    <script type="text/javascript" src="../../global/static/js/Base64.js?v=1.0"></script>
+    <script type="text/javascript" src="js/jquery.js?v=1.0"></script>
+    <script type="text/javascript" src="js/touch.js?v=1.0"></script>
+    <script type="text/javascript" src="js/extend.js?v=1.0"></script>
+    <script type="text/javascript" src="js/lib.js?v=1.0"></script>
+    <script type="text/javascript" src="js/carpool.js?v=1.0"></script>
+    <script type="text/javascript" src="js/tripde.js?v=1.0"></script>
+</body>
+</html>
+

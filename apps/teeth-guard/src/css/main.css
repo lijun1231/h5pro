@@ -1,0 +1,163 @@
+.main-day-time-item-tip h1 {
+  font-size: 1.2rem;
+}
+.bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background:#28b2ff;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #fff;
+}
+.main-item {
+  position: relative;
+  display: flex;
+  padding: 1rem;
+
+}
+
+/*main-day-time*/
+.main-day-time {
+  display: flex;
+  flex-direction: column;
+}
+.main-day-time-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.5rem 0;
+  background: #e2f5fb;
+  border-radius: 50%;
+}
+
+.main-day-time-item-process {
+  position: absolute;
+  clip: rect(0, 4rem, 4rem, 2rem);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.main-day-time-item-process.no-rect {
+  clip: rect(auto, auto, auto, auto);
+}
+.main-day-time-item-process>.pr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1adc00;
+  border-radius: 50%;
+}
+.quality .main-day-time-item-process>.pr {
+  background: #f6cd4e;
+}
+.main-day-time-item-process>.pr.left {
+  /*clip: rect(0%, 50%, 50%, 0%);*/
+  clip: rect(0rem, 2rem, 4rem, 0rem);
+  /*clip: rect(0px,60px,200px,0px);*/
+}
+.main-day-time-item-process>.pr.right {
+  clip: rect(0, 4rem, 4rem, 2rem);
+}
+
+.main-night .main-day-time-item {
+  background: #fff;
+}
+.main-night {
+  background: #e2f5fa;
+}
+.main-day-time-item-tip {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #e2f5fb;
+  background-origin: content-box;
+  margin: 0.3rem;
+  width: 3.4rem;
+  height: 3.4rem;
+
+  border-radius: 50%;
+  /*width: 100%;*/
+}
+.main-day-time-item-tip > em {
+  color: #199dff;
+  font-size: 0.9rem;
+}
+
+/*main-day-con*/
+.main-day-con {
+  position: relative;
+  flex-grow: 1;
+  margin: 1rem 0;
+  background: url(../images/teeth-bg.png) no-repeat center center;
+  background-size: contain;
+  color: #199dff;
+  font-size: 0.9rem;
+}
+.main-day-con-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.main-day-con-list>li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+
+}
+.main-day-con-loc {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.main-day-con-tip {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+/*main-day-mark*/
+.main-day-mark {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.main-day > .main-day-mark {
+  background-image: url(../images/sun.png);
+}
+.main-night > .main-day-mark {
+  background-image: url(../images/moon.png);
+}

@@ -1,0 +1,56 @@
+<div class='bg'>
+    <div class='main'>
+        <div class="main-item main-day">
+            <div class="main-day-time">
+                <div class="main-day-time-item">
+                    <span :class='["main-day-time-item-process", +teethQuality.morning.duration > 60 ? "no-rect" : ""]'>
+                        <span class="pr left" :style='{transform: `rotate(${getTimePercent(teethQuality.morning.duration, 120)}deg)`}'></span>
+                        <span class="pr right" :style='{display: `${+teethQuality.morning.duration > 60 ? "block" : "none"}` }'></span>
+                    </span>
+                    <span class="main-day-time-item-tip"><h1>{{teethQuality.morning.duration | formatTime }}</h1><em>时长</em></span>
+                </div>
+                <div class="main-day-time-item quality">
+                    <span :class='["main-day-time-item-process", +teethQuality.morning.quality > 2.5 ? "no-rect" : ""]'>
+                        <span class="pr left" :style='{transform: `rotate(${getTimePercent(teethQuality.morning.quality, 5)}deg)`}'></span>
+                        <span class="pr right" :style='{display: `${+teethQuality.morning.quality > 2.5 ? "block" : "none"}` }'></span>
+                    </span>
+                    <span class="main-day-time-item-tip"><h1>{{teethQuality.morning.quality ? teethQuality.morning.quality.toFixed(1) : '-'}}</h1><em>质量</em></span>
+                </div>
+            </div>
+            <div class="main-day-con">
+                <ul class="main-day-con-list" v-if='teethQuality.morning'>
+                    <li v-for='(v, k) in teethQuality.morning.teeth' :style='{backgroundImage: `url(images/tooth-${k}.png)`, opacity:`${getTransp(v)}`}'></li>
+                </ul>
+                <div class="main-day-con-loc"><span>上</span><span>下</span></div>
+                <span class="main-day-con-tip">覆盖</span>
+            </div>
+            <div class="main-day-mark"></div>
+        </div>
+        <div class="main-item main-night">        
+            <div class="main-day-time">
+                <div class="main-day-time-item">
+                    <span :class='["main-day-time-item-process", +teethQuality.night.duration > 60 ? "no-rect" : ""]'>
+                        <span class="pr left" :style='{transform: `rotate(${getTimePercent(teethQuality.night.duration)}deg)`}'></span>
+                        <span class="pr right" :style='{display: `${+teethQuality.night.duration > 60 ? "block" : "none"}` }'></span>
+                    </span>
+                    <span class="main-day-time-item-tip"><h1>{{teethQuality.night.duration | formatTime }}</h1><em>时长</em></span>
+                </div>
+                <div class="main-day-time-item quality">
+                    <span :class='["main-day-time-item-process", +teethQuality.night.quality > 2.5 ? "no-rect" : ""]'>
+                        <span class="pr left" :style='{transform: `rotate(${getTimePercent(teethQuality.night.quality, 5)}deg)`}'></span>
+                        <span class="pr right" :style='{display: `${+teethQuality.night.quality > 2.5 ? "block" : "none"}` }'></span>
+                    </span>
+                    <span class="main-day-time-item-tip"><h1>{{teethQuality.night.quality ? teethQuality.night.quality.toFixed(1) : '-'}}</h1><em>质量</em></span>
+                </div>
+            </div>
+            <div class="main-day-con">
+                <ul class="main-day-con-list" v-if='teethQuality.night'>
+                    <li v-for='(v, k) in teethQuality.night.teeth' :style='{backgroundImage: `url(images/tooth-${k}.png)`, opacity:`${getTransp(v)}`}'></li>
+                </ul>
+                <div class="main-day-con-loc"><span>上</span><span>下</span></div>
+                <span class="main-day-con-tip">覆盖</span>
+            </div>
+            <div class="main-day-mark"></div>
+        </div>
+    </div>
+</div>

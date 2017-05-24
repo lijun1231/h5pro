@@ -2,6 +2,7 @@
 var gulp = require('gulp'),
     del = require('del'),
     fs=require('fs'),
+    mock=require('mockjs'),
     lib = require('./create/gulpfile_lib'),
     formateNm=lib.formateNm,
     argv = require('minimist')(process.argv.slice(2)),
@@ -26,7 +27,8 @@ var gulp = require('gulp'),
     gulp_remove_logging=require("gulp-remove-logging"),
     zip = require('gulp-zip'),
     fileinclude  = require('gulp-file-include'),
-    babel = require('gulp-babel');
+    babel = require('gulp-babel'),
+    ts = require('gulp-typescript');
 var taskVersion="",//备份版本号
     projectName=__dirname.substr(__dirname.lastIndexOf('\\')+1);//项目名称
 
@@ -137,6 +139,7 @@ gulp.task('help',function(){
                     .pipe(babel({
                         presets: ['es2015']
                     }))
+                    .pipe(ts())
                     .pipe(gulp_remove_logging())
                     //压缩、md5加密并输出到目录
                     .pipe(uglify())
@@ -322,26 +325,6 @@ gulp.task('watch:less',function(){
               //  .pipe(notify({ message: '1some less changed' }));
         });
 });
-//监听-es6自动编译
-gulp.task('watch:es6',function(){
-    var p='';
-    var srcBase=paths.input.css.base;
-    var ct=paths.input.css.catalog;
-    return watch(paths.input.less+'/*.less',function(file){
-        return gulp.src(file.path)
-            .pipe(plumber({errorHandler:notify.onError('error:<%= error.message %>')}))
-            .pipe(less())
-            .pipe(rename({suffix:'.less'}))
-            .pipe(gulp.dest(srcBase+ct[0]))
-            //回调
-            .on('end',function(){
-                p=file.path.replace(/\.less$/,'.less.css');
-                livereload.changed(p);
-            });
-        //提醒任务完成
-        //  .pipe(notify({ message: '1some less changed' }));
-    });
-});
 gulp.task('watch',['watch:less','watch:lp']);
 /////////////////////////////////////////////////////////////////////////////////watch
 /////////////////////////////////////////////////////////////////////////////////watch-2
@@ -413,3 +396,11 @@ function replaceServerHTML(dt,json,fn){
     }
     fn(outData);
 }
+/////////////////////////////////////////////////////////////////////////////////extends
+/////////////////////////////////////////////////////////////////////////////////mock
+var data = mock.mock({
+    'list|1-10': [{
+        'id|+1': 1
+    }]
+});
+/////////////////////////////////////////////////////////////////////////////////mock
